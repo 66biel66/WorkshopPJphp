@@ -1,5 +1,6 @@
-rewriteengine on
-rewritcond %{REQUEST_FILENAME} -f
-rewritcond %{REQUEST_FILENAME} -d
-rewritrole ^(.*) index.php?page=$1
+#rewriteengine on
+#rewritcond %{REQUEST_FILENAME} -f
+#rewritcond %{REQUEST_FILENAME} -d
+#rewriterule ^(.*)$ index.php?page=$1
+
 
