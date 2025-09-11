@@ -6,7 +6,7 @@ if( !isset($_SESSION ['email']) || $_SESSION ['email'] ==''){
     header("Location :  index.php");
 
 }
-echo ("ola".$_SESSION['nome']);
+echo ("ola ".$_SESSION['nome']);
 ?>
 
 
@@ -27,7 +27,9 @@ echo ("ola".$_SESSION['nome']);
 
 <div style="width: 1000px;  margin: 0 auto;">
     <div style="max-width: 100%;min-height: 100px; background-color: dimgray;">
-        <button type="button">sair</button>
+        <form action="Sair" method="post">
+        <input type="submit" value="sair"></button>
+        </form>
     </div>
 
     <div style="width: 200px; min-height: 500px; background-color: gray;float: left;">
