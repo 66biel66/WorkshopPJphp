@@ -1,2 +1,6 @@
 
 # WorkshopPJphp
+
+
+
+# htacess com problemas!!
