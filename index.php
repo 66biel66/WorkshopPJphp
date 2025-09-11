@@ -6,9 +6,9 @@
 </head>
 <body>
     <form action = "login.php" method="post">
-
-    Nome = <input type = "text" name = "nome"/><br/>
-    email = <input type = "password" name = "email"/>
+DI
+    email = <input type = "text" name = "email"/><br/>
+    senha = <input type = "password" name = "senha"/>
     <input type="submit" value = "enviar"/>
 </form>
 

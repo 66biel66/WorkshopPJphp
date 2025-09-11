@@ -1,11 +1,11 @@
 <?php
 include("conexao.php");
-$nome = $_POST ['nome'];
-$email = $_POST['email'];
+$email = $_POST ['email'];
+$senha = $_POST['senha'];
 
 
 
-$sql = "select id from usuarios where nome='$nome' and email = '$email'";
+$sql = "select id from usuarios where email='$email' and senha = '$senha'";
 
 
 
@@ -15,8 +15,8 @@ if ($resultado = $conn->query($sql)){
     if(isset($row) && $row ['id'] != ''){
     session_start();
     $_SESSION ['id'] = $row['id'];
-    $_SESSION ['nome'] = $_POST['nome'];
     $_SESSION ['email'] = $_POST['email'];
+    $_SESSION ['senha'] = $_POST['senha'];
     header('Location: principal.php');
 
     }else{
