@@ -1,5 +1,5 @@
 <?php
-require_once "Conexao.php";
+require_once '../config/Conexao.php';
 
 $db = Conexao::getInstace();
 

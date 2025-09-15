@@ -6,7 +6,6 @@ session_destroy();
 }
 ?>
 
-
 <html lang="en">
 <head>
     
