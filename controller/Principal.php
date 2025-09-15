@@ -22,20 +22,20 @@ if( !isset($_SESSION ['email']) || $_SESSION ['email'] ==''){
 </head>
 
 <body>
-    
+     <link rel="stylesheet" href="controller/Principal.css">
 
-<div style="width: 1000px;  margin: 0 auto;">
-    <div style="max-width: 100%;min-height: 100px; background-color: dimgray;">
+<div id="principal">
+    <div id="topo" >
         <form action="Sair" method="post">
         <input type="submit" value="sair"></button>
         </form>
     </div>
 
-    <div style="width: 200px; min-height: 500px; background-color: gray;float: left;">
+    <div id="lateral">
 
     </div>
 
-    <div style="width: 800px; min-height: 500px; background-color: bisque; float: left;" >
+    <div id="menu">
 
     </div>
 </div>

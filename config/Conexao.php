@@ -15,18 +15,26 @@ class Conexao{
         }
     }
 
-    public static function getInstace(){
+    public static function getInstance(){
         if(self::$instance == null){
             self::$instance = new Conexao();
         }
         return self::$instance;
     }
 
-    public function query($sql){
-        $stm = $this->conexao->prepare($sql);
+    public function executar( $query, $param = array()){
+       
+        if($this -> conexao){
+                $sth = $this -> conexao -> prepare($query);
+            foreach($param as $k => $v){
 
-        $stm->execute();
-        return $stm->fetchAll(PDO::FETCH_ASSOC);
+                $sth -> bindValue($k,$v);
+            }
+        
+
+        $sth -> execute();
+        return $sth -> fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 }
 ?>

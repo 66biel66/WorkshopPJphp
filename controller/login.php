@@ -1,7 +1,7 @@
 <?php
 require_once '../config/Conexao.php';
 
-$db = Conexao::getInstace();
+$db = Conexao::getInstance();
 
 $email = $_POST ['email'];
 $senha = $_POST['senha'];
