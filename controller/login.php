@@ -1,13 +1,9 @@
 <?php
-include("conexao.php");
+include_once __DIR__ . '/../config/Conexao.php';
 $email = $_POST ['email'];
 $senha = $_POST['senha'];
 
-
-
 $sql = "select id, nome from usuarios where email='$email' and senha = '$senha'";
-
-
 
 if ($resultado = $conn->query($sql)){
     $row = $resultado->fetch_assoc();
@@ -24,12 +20,9 @@ if ($resultado = $conn->query($sql)){
         echo ("erro no login!");
 
     }
-
     
 }else{
 
     echo("erro no banco!");
 }
-
-
 ?>
