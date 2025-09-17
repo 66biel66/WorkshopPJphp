@@ -1,9 +1,16 @@
 <?php 
+include "generic/autoload.php";
+use generic\Controller;
+if (isset($_GET['param'])){
+    $controller = new Controller();
+    $controller->verificarchamada($_GET['param']);  
+}
 session_start();
 if (isset($_SESSION['errologin'])){
 echo ($_SESSION['errologin']);
 session_destroy();
 }
+
 ?>
 
 <html lang="en">
