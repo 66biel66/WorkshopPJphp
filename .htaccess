@@ -1,13 +1,22 @@
 RewriteEngine On
-# Essa é a pasta do projeto 
 RewriteBase /Workshop/
-
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?param=$1 [L,QSA]
+
+
+
+
+#RewriteEngine On
+# Essa é a pasta do projeto 
+#RewriteBase /Workshop/
+
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
 
 #          // muda o link   // o nome real do arquivo
-RewriteRule ^Login$ index.php?workshop=$1 [L,QSA]
-RewriteRule ^Conectando$ controller/login.php?workshop=$1 [L,QSA]
-RewriteRule ^Menu$ controller/Principal.php?workshop=$1 [L,QSA]
-RewriteRule ^Sair$ controller/sair.php?workshop=$1 [L,QSA]
+#RewriteRule ^Login$ index.php?workshop=$1 [L,QSA]
+#RewriteRule ^Conectando$ controller/login.php?workshop=$1 [L,QSA]
+#RewriteRule ^Menu$ controller/Principal.php?workshop=$1 [L,QSA]
+#RewriteRule ^Sair$ controller/sair.php?workshop=$1 [L,QSA]

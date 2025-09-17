@@ -1,20 +1,12 @@
 <?php
-
 namespace generic;
 
-use Conexao;
-
-class msqlfactory{
-
+class MysqlFactory{
 
     public Conexao $banco;
     public function __construct(){
         $this-> banco = Conexao::getInstance();
-  
-  
     }
-  
-
 
 }
 

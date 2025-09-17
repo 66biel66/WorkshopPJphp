@@ -1,4 +1,7 @@
 <?php
+namespace generic;
+use PDO;
+
 class Conexao{
     private static $instance = null;
 

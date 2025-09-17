@@ -1,22 +1,8 @@
-<?php 
-session_start();
-if (isset($_SESSION['errologin'])){
-echo ($_SESSION['errologin']);
-session_destroy();
+<?php
+include "mvc/generic/Autoload.php";
+use generic\Controller;
+
+if (isset($_GET["param"])){
+    $controller = new Controller();
+    $controller->verificarChamadas($_GET["param"]);
 }
-?>
-
-<html lang="en">
-<head>
-    
-    <title>login</title>
-</head>
-<body>
-    <form action = "Conectando" method="post">
-    email = <input type = "text" name = "email"/><br/>
-    senha = <input type = "password" name = "senha"/>
-    <input type="submit" value = "enviar"/>
-</form>
-
-</body>
-</html>

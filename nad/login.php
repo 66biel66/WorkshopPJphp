@@ -8,7 +8,7 @@ $senha = $_POST['senha'];
 
 $sql = $db->query("select id, nome from usuarios where email='$email' and senha = '$senha'");
 
-if(count($sql) > 0){
+if(executar($sql) > 0){
     session_start();
     $_SESSION['id'] = $sql[0]['id'];
     $_SESSION['nome'] = $sql[0]['nome'];
