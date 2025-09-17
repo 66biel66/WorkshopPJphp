@@ -22,7 +22,7 @@ if( !isset($_SESSION ['email']) || $_SESSION ['email'] ==''){
 </head>
 
 <body>
-     <link rel="stylesheet" href="controller/Principal.css">
+     <link rel="stylesheet" href="tamplate/Principal.css">
 
 <div id="principal">
     <div id="topo" >

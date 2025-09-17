@@ -6,7 +6,7 @@ $db = Conexao::getInstance();
 $email = $_POST ['email'];
 $senha = $_POST['senha'];
 
-$sql = $db->query("select id, nome from usuarios where email='$email' and senha = '$senha'");
+$sql = $db->executar("select id, nome from usuarios where email='$email' and senha = '$senha'");
 
 if(executar($sql) > 0){
     session_start();

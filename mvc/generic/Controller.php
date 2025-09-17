@@ -1,3 +1,4 @@
+<<<<<<< HEAD:mvc/generic/Controller.php
 <?php 
 namespace generic;
 
@@ -24,3 +25,44 @@ class Controller{
     }
 }
 
+=======
+<?php
+
+namespace generic;
+
+class Controller {
+
+    private $arrChamadas=[];
+
+
+    public function __construct() {
+        $this->arrChamadas = [
+            'Login' => 'view/login.php',
+            'Conectando' => 'controller/login.php',
+            'Menu' => 'controller/Principal.php',
+            'Sair' => 'controller/sair.php'
+        ];
+    }
+    
+    // verifica se a rota existe
+    public function verificarchamada ($rota) {
+
+        if(isset) ($this->arrChamadas[$rota]) {
+$acao = $this arrChamadas[$rota];
+            //ação da rota 
+
+            $acao = $this->arrChamadas[$rota];
+            $acao -> executar();
+            return;
+        } 
+
+        echo "Página não encontrada";
+        }
+
+
+}
+
+
+
+?>
+>>>>>>> e1b4b65d7ea24e527d6e37665b7c02fee7eee253:generic/Controller.php
