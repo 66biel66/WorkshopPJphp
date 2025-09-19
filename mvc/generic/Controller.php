@@ -6,10 +6,10 @@ class Controller{
     public function __construct()
     {
         $this->arrChamadas = [
-            "usuario/lista" => new Acao("Usuario", "listar"),
-            "usuario/formulario" => new Acao("Usuario", "formulario"),
-            "usuario/formularioalterar" => new Acao("Usuario", "alterarform"),
-            "usuario/inserir" => new Acao("Usuario", "inserir"),
+            "mvc/usuario/lista" => new Acao("Usuario", "listar"),
+            "mvc/usuario/formulario" => new Acao("Usuario", "formulario"),
+            "mvc/usuario/formularioalterar" => new Acao("Usuario", "alterarform"),
+            "mvc/usuario/inserir" => new Acao("Usuario", "inserir"),
             
         ];
     }

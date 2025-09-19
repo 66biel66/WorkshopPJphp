@@ -15,7 +15,7 @@ class Usuario{
     public function listar(){
         $service = new UsuarioService();
         $resultado = $service->listarUsuarios();
-        $this->template->layout("\\public\\listar.php", $resultado);
+        $this->template->layout("listar.php", $resultado);
     }
 
     public function inserir(){
@@ -23,17 +23,24 @@ class Usuario{
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $service = new UsuarioService();
-        $resultado = $service->inserir($nome, $email, $senha);
-        header("location: /mvc/usuario/lista?info=1");
+        if (isset($_POST["id"]) && $_POST["id"] != "") {
+            // Alterar cliente existente
+            $id = $_POST["id"];
+            $service->alterar($id, $nome, $email, $senha);
+        } else {
+            // Inserir novo cliente
+            $service->inserir($nome, $email, $senha);
+        }
+        header("location: /Workshop/mvc/usuario/lista?info=1");
     }
 
     public function formulario(){
-        $this->template->layout("\\public\\usuario\\form.php");
+        $this->template->layout("form.php");
     }
 
     public function alterarForm(){
         $id = $_GET["id"];
         $service = new UsuarioService();
         $resultado = $service->listarId($id);
-        $this->template->layout("\\public\\usuario\\form.php", $resultado);}
+        $this->template->layout("form.php", $resultado);}
 }
