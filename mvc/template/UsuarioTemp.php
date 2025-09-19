@@ -5,7 +5,8 @@ namespace template;
 class UsuarioTemp implements Itemplate{
     public function cabecalho()
     {
-        echo "<div>Cabeçalho</div>";
+        echo "<div>cabecalho</div>";
+
     }
     public function rodape()
     {

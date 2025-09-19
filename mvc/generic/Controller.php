@@ -1,5 +1,4 @@
-<<<<<<< HEAD:mvc/generic/Controller.php
-<?php 
+<?php    
 namespace generic;
 
 class Controller{
@@ -11,6 +10,7 @@ class Controller{
             "usuario/formulario" => new Acao("Usuario", "formulario"),
             "usuario/formularioalterar" => new Acao("Usuario", "alterarform"),
             "usuario/inserir" => new Acao("Usuario", "inserir"),
+            
         ];
     }
 
@@ -25,7 +25,7 @@ class Controller{
     }
 }
 
-=======
+/*
 <?php
 
 namespace generic;
@@ -63,6 +63,5 @@ $acao = $this arrChamadas[$rota];
 }
 
 
-
+*/
 ?>
->>>>>>> e1b4b65d7ea24e527d6e37665b7c02fee7eee253:generic/Controller.php
