@@ -4,7 +4,7 @@ include "mvc/generic/autoload.php";
 use generic\Controller;
 
     // se não tiver parametros cai na home page
-        $acao = $_GET['param'] ?? 'mvc/public/home.php';
+        $acao = $_GET['param'] ?? 'mvc/public/home/index.php';
         $controller = new Controller();
         $controller->verificarChamadas ($_GET['param']);  
       
