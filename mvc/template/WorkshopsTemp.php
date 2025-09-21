@@ -2,7 +2,7 @@
 
 namespace template;
 
-class UsuarioTemp implements Itemplate{
+class WorkshopsTemp implements Itemplate{
     public function cabecalho()
     {
         echo "<div class='cabecalho'>Cabeçalho</div>";

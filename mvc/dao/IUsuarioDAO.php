@@ -6,4 +6,7 @@ interface IUsuarioDAO{
     public function inserir($nome, $email, $senha);
     public function listarId($id);
     public function alterar($id, $nome, $email, $senha);
+    public function fazerLogin($email,$senha);
+    public function excluir($id);
+    public function getID($email);
 }

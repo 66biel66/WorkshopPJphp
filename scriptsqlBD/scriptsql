@@ -25,3 +25,7 @@ CREATE TABLE clientes (
     nome VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL
 )
+
+INSERT INTO `workshops` (`id`, `titulo`, `descricao`, `data`) VALUES ('1', 'Workshop de Programação Web', 'Aprenda os fundamentos do desenvolvimento web com HTML, CSS e JavaScript.', '2025-01-01')
+INSERT INTO `workshops` (`id`, `titulo`, `descricao`, `data`) VALUES ('2', 'Workshop de Design Gráfico', 'Explore ferramentas como Photoshop e Illustrator para criar designs incríveis.', '2025-01-01')
+INSERT INTO `workshops` (`id`, `titulo`, `descricao`, `data`) VALUES ('3', 'Workshop de Marketing Digital', 'Descubra estratégias para alavancar marcas e produtos online.', '2025-01-01')

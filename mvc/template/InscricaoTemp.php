@@ -2,14 +2,14 @@
 
 namespace template;
 
-class UsuarioTemp implements Itemplate{
-    public function cabecalho()
+class InscricaoTemp implements Itemplate {
+     public function cabecalho()
     {
-        echo "<div class='cabecalho'>Cabeçalho</div>";
+        echo "<div>Cabeçalho</div>";
     }
     public function rodape()
     {
-        echo "<div class='rodape'>Rodapé</div>";
+        echo "<div>Rodapé</div>";
     }
     public function layout($caminho, $parametro = null)
     {

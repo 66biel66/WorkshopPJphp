@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!isset($parametro) || !is_array($parametro)) {
     $parametro = [];
 }
@@ -6,15 +7,16 @@ if (!isset($parametro) || !is_array($parametro)) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Gerenciar Usuário</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #f5f6fa;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -55,10 +57,18 @@ if (!isset($parametro) || !is_array($parametro)) {
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
             box-sizing: border-box;
-            margin-top: 100px;
-            margin-bottom: 100px;
+        }
+
+        .erro {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .form-group {
@@ -72,8 +82,7 @@ if (!isset($parametro) || !is_array($parametro)) {
         }
 
         input[type="text"],
-        input[type="password"],
-        input[type="email"] {
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -97,29 +106,29 @@ if (!isset($parametro) || !is_array($parametro)) {
             background-color: #2980b9;
         }
 
-        .excluir-btn {
-            background-color: #e74c3c;
-            margin-top: 10px;
+        .cadastro-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #3498db;
+            text-decoration: none;
         }
 
-        .excluir-btn:hover {
-            background-color: #c0392b;
+        .cadastro-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-    <div class="cabecalho">
-        Cadastro / Alteração de Usuário
-    </div>
-
     <div class="container">
-        <form method="POST" action="/Workshop/mvc/usuario/inserir">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome"
-                    value="<?= (isset($parametro[0]["nome"])) ? $parametro[0]["nome"] : "" ?>">
-            </div>
 
+        <?php if (isset($_SESSION["erro"])): ?>
+            <div class="erro"><?= $_SESSION["erro"] ?></div>
+            <?php session_destroy(); ?>
+        <?php endif; ?>
+
+        <form method="POST" action="/Workshop/mvc/usuario/fazerLogin">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" name="email" id="email"
@@ -136,19 +145,11 @@ if (!isset($parametro) || !is_array($parametro)) {
                 <input type="hidden" name="id" value="<?= $parametro[0]['id'] ?>">
             <?php endif; ?>
 
-            <input type="submit" value="<?= isset($parametro[0]['id']) ? 'Atualizar' : 'Cadastrar' ?>">
+            <input type="submit" value="Entrar">
         </form>
 
-        <?php if (isset($parametro[0]['id'])): ?>
-            <form method="POST" action="/Workshop/mvc/usuario/excluir" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
-                <input type="hidden" name="id" value="<?= $parametro[0]['id'] ?>">
-                <input type="submit" class="excluir-btn" value="Excluir Conta">
-            </form>
-        <?php endif; ?>
-    </div>
-
-    <div class="rodape">
-        &copy; <?= date("Y") ?> - Todos os direitos reservados.
+        <a class="cadastro-link" href="/Workshop/mvc/usuario/formulario">Cadastre-se!</a>
     </div>
 </body>
+
 </html>

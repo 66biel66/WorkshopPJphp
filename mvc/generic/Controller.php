@@ -10,7 +10,13 @@ class Controller{
             "mvc/usuario/formulario" => new Acao("Usuario", "formulario"),
             "mvc/usuario/formularioalterar" => new Acao("Usuario", "alterarform"),
             "mvc/usuario/inserir" => new Acao("Usuario", "inserir"),
-            
+            "mvc/usuario/login" => new Acao ("Usuario", "login"),
+            "mvc/usuario/fazerLogin" => new Acao ("Usuario", "fazerLogin"),
+            "mvc/usuario/principal" => new Acao ("Usuario", "principal"),
+            "mvc/usuario/excluir" => new Acao("Usuario", "excluir"),
+            "mvc/inscricao/inscrever" => new Acao("Inscricao", "inscrever"),
+            "mvc/inscricao/sair" => new Acao("Inscricao", "sair"),
+            "mvc/workshops/lista" => new Acao("Workshops", "listarWorkshop")
         ];
     }
 
