@@ -3,6 +3,8 @@
 namespace service;
 
 use dao\mysql\UsuarioDAO;
+use generic\JWTAuth;
+use stdClass;
 
 class UsuarioService extends UsuarioDAO
 {
@@ -40,4 +42,22 @@ class UsuarioService extends UsuarioDAO
     {
         return parent::getID($email);
     }
+
+    public function login()
+    {
+        return parent::login();
+    }
+    /*public function autenticar($email, $senha)
+    {
+        $rows = parent::verificaLogin($email, $senha);
+        if ($rows) {
+            $jwt = new JWTAuth();
+            $objeto = new stdClass();
+            $objeto->email=$rows[0]["email"];
+            $objeto->senha=$rows[0]["senha"];
+
+            return $jwt->criarChave(json_encode($objeto));
+        }
+        http_response_code(401);
+    }*/
 }

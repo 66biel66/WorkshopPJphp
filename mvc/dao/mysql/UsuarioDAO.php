@@ -75,4 +75,8 @@ class UsuarioDAO extends MysqlFactory implements IUsuarioDAO{
     $retorno = $this->banco->executar($sql, $param);
     return $retorno;
     }
+
+    public function login(){
+        header("login.php");
+    }
 }

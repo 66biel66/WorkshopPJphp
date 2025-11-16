@@ -9,13 +9,19 @@ use template\Itemplate;
 class Usuario{
     private Itemplate $template;
     public function __construct(){
-        $this-> template = new UsuarioTemp();
+        
     }
+
+    /*public function listar(){
+        $service = new UsuarioService();
+        $resultado = $service->listarUsuarios();
+        $this->template->layout("listar.php", $resultado);
+    }*/
 
     public function listar(){
         $service = new UsuarioService();
         $resultado = $service->listarUsuarios();
-        $this->template->layout("listar.php", $resultado);
+        return $resultado;
     }
 
     public function inserir(){
@@ -52,8 +58,14 @@ class Usuario{
         $resultado = $service->listarId($id);
         $this->template->layout("form.php", $resultado);}
 
-    public function login(){
+    /*public function login(){
         $this->template->layout("login.php");
+    }*/
+    
+    public function login(){
+        $service = new UsuarioService();
+        $resultado = $service->login();
+        return $resultado;
     }
 
     public function fazerLogin(){

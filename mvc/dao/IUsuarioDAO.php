@@ -9,4 +9,5 @@ interface IUsuarioDAO{
     public function fazerLogin($email,$senha);
     public function excluir($id);
     public function getID($email);
+    public function login();
 }
