@@ -7,39 +7,12 @@ class Rotas{
 
     public function __construct(){
         $this->endpoints = [
-            "mvc/usuario/listar" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "listar")
-            ]),
-            "mvc/usuario/formulario" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "formulario", false)
-            ]),
-            "mvc/usuario/formularioalterar" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "alterarForm", false)
-            ]),
-            "mvc/usuario/inserir" => new Acao([
-                Acao::POST => new Endpoint("Usuario", "inserir", false)
-            ]),
-            "mvc/usuario/login" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "login", false)
-            ]),
-            "mvc/usuario/fazerLogin" => new Acao([
-                Acao::POST => new Endpoint("Usuario", "fazerLogin", false)
-            ]),
-            "mvc/usuario/principal" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "principal", false)
-            ]),
-            "mvc/usuario/excluir" => new Acao([
-                Acao::POST => new Endpoint("Usuario", "excluir", false)
-            ]),
-            "mvc/inscricao/inscrever" => new Acao([
-                Acao::GET => new Endpoint("Inscricao", "inscrever", false)
-            ]),
-            "mvc/inscricao/sair" => new Acao([
-                Acao::POST => new Endpoint("Inscricao", "sair", false)
-            ]),
-            "mvc/workshops/lista" => new Acao([
-                Acao::GET => new Endpoint("Workshops", "listarWorkshop", false)
-            ]),
+            "mvc/usuario" => new Acao([
+                Acao::GET => new Endpoint("Usuario", "listar"),
+                Acao::POST => new Endpoint("Usuario", "inserir"),
+                Acao::PUT => new Endpoint("Usuario", "alterar"),
+                aCAO::DELETE => new Endpoint("Usuario", "excluir")
+            ])
         ];
     }
 

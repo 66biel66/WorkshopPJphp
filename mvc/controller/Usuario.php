@@ -2,6 +2,7 @@
 
 namespace controller;
 
+use PDOException;
 use service\UsuarioService;
 use template\UsuarioTemp;
 use template\Itemplate;
@@ -24,7 +25,31 @@ class Usuario{
         return $resultado;
     }
 
-    public function inserir(){
+    public function inserir($nome, $email, $senha){
+        $service = new UsuarioService();
+        $resultado = $service->inserir($nome, $email, $senha);
+        return $resultado;
+    }
+
+    public function alterar($id, $nome, $email, $senha){
+        try {
+        $service = new UsuarioService();
+        $resultado = $service->alterar($id, $nome, $email, $senha);
+        return $resultado;
+        } catch (PDOException $e) {
+            echo json_encode([
+                'erro' => 'Erro',
+                'detalhes' => 'erro'
+            ]);
+        }
+    }
+
+    public function excluir($id){
+        $service = new UsuarioService();
+        $resultado = $service->excluir($id);
+        return $resultado;
+    }
+    /*public function inserir(){
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $senha = $_POST["senha"];
@@ -46,7 +71,7 @@ class Usuario{
             $_SESSION["nome"] = $nome;
         }
         header("location: /Workshop/mvc/usuario/principal?info=1");
-    }
+    }*/
 
     public function formulario(){
         $this->template->layout("form.php");
@@ -91,7 +116,7 @@ class Usuario{
         $this->template->layout("principal.php");
     }
 
-    public function excluir(){
+    /*public function excluir(){
     if (isset($_POST["id"])) {
         $id = $_POST["id"];
         $service = new UsuarioService();
@@ -99,6 +124,5 @@ class Usuario{
         header("location: /Workshop/mvc/usuario/login");
     } else {
         echo "ID não informado!";
+    }*/
     }
-    }
-}
