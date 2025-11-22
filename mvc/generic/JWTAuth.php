@@ -5,8 +5,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 class JWTAuth{
-    private string $key = "bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43";
-    
+    private string $key = "bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43";                  
     public function criarChave($dados){
         $hora = time();
         $payload = [

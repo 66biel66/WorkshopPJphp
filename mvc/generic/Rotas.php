@@ -11,7 +11,11 @@ class Rotas{
                 Acao::GET => new Endpoint("Usuario", "listar"),
                 Acao::POST => new Endpoint("Usuario", "inserir"),
                 Acao::PUT => new Endpoint("Usuario", "alterar"),
-                aCAO::DELETE => new Endpoint("Usuario", "excluir")
+                Acao::DELETE => new Endpoint("Usuario", "excluir")
+            ]),
+
+            "mvc/usuarioAutenticar" => new Acao([
+                Acao::POST => new Endpoint("Usuario", "autenticar"),
             ])
         ];
     }
