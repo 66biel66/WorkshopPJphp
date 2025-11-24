@@ -8,7 +8,7 @@ class Rotas{
     public function __construct(){
         $this->endpoints = [
             "mvc/usuario" => new Acao([
-                Acao::GET => new Endpoint("Usuario", "listar"),
+                Acao::GET => new Endpoint("Usuario", "listar", true),
                 Acao::POST => new Endpoint("Usuario", "inserir"),
                 Acao::PUT => new Endpoint("Usuario", "alterar"),
                 Acao::DELETE => new Endpoint("Usuario", "excluir")

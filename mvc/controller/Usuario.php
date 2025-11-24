@@ -9,19 +9,10 @@ use template\Itemplate;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use generic\JWTAuth;
+use generic\Retorno;
+use generic\Controller;
 
-$headers = getallheaders();
-if(!isset($headers['Authorization'])) {
-    exit(json_encode(['erro' => 'Token nao enviado']));
-}
 
-$token = str_replace('Bearer ', '', $headers['Authorization']);
-
-try {
-    $decodificado = JWT::decode($token, new Key('bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43', 'HS256'));
-} catch (Exception $e) {
-    exit(json_encode(['erro' => 'Token nao enviado']));
-}
 
 class Usuario{
     private Itemplate $template;
@@ -30,24 +21,88 @@ class Usuario{
     }
 
     public function listar(){
+        $headers = getallheaders();
+        if(!isset($headers['Authorization'])) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
+        $token = str_replace('Bearer ', '', $headers['Authorization']);
+        try {
+        $decodificado = JWT::decode($token, new Key('bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43', 'HS256'));
+        } catch (Exception $e) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token inváldo";
+        return $retorno;
+        }
         $service = new UsuarioService();
         $resultado = $service->listarUsuarios();
         return $resultado;
     }
 
     public function inserir($nome, $email, $senha){
+        $headers = getallheaders();
+        if(!isset($headers['Authorization'])) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
+        $token = str_replace('Bearer ', '', $headers['Authorization']);
+        try {
+        $decodificado = JWT::decode($token, new Key('bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43', 'HS256'));
+        } catch (Exception $e) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
         $service = new UsuarioService();
         $resultado = $service->inserir($nome, $email, $senha);
         return $resultado;
     }
 
     public function alterar($id, $nome, $email, $senha){
+        $headers = getallheaders();
+        if(!isset($headers['Authorization'])) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
+        $token = str_replace('Bearer ', '', $headers['Authorization']);
+        try {
+        $decodificado = JWT::decode($token, new Key('bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43', 'HS256'));
+        } catch (Exception $e) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
         $service = new UsuarioService();
         $resultado = $service->alterar($id, $nome, $email, $senha);
         return $resultado;
     }
 
     public function excluir($id){
+        $headers = getallheaders();
+        if(!isset($headers['Authorization'])) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
+        $token = str_replace('Bearer ', '', $headers['Authorization']);
+        try {
+        $decodificado = JWT::decode($token, new Key('bb3762cf3277cd774be9907ff520fb4eda1e6f912d01f68c45edfe1d33239b43', 'HS256'));
+        } catch (Exception $e) {
+        $retorno = new Controller();
+        $retorno->verificarChamadas("http://localhost/Workshop/mvc/usuario");
+        $retorno = "Token não enviado";
+        return $retorno;
+        }
         $service = new UsuarioService();
         $resultado = $service->excluir($id);
         return $resultado;
