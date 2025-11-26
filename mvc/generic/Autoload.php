@@ -1,5 +1,4 @@
 <?php
-
 namespace generic;
 
 spl_autoload_register(function($class){

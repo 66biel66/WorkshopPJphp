@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/11/2025 às 22:03
+-- Tempo de geração: 26/11/2025 às 20:25
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,19 +33,6 @@ CREATE TABLE `inscricoes` (
   `workshop_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `inscricoes`
---
-
-INSERT INTO `inscricoes` (`id`, `usuario_id`, `workshop_id`) VALUES
-(44, 173, 1),
-(45, 173, 2),
-(49, 174, 3),
-(50, 174, 2),
-(51, 174, 1),
-(62, 167, 1),
-(63, 177, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -64,14 +51,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(167, 'kauan', 'kauan@kauan.com', '123'),
-(169, 'novo', 'novo@novo.com', '123'),
-(170, 'Luis', 'Luis@Luis.com', '123'),
-(171, 'ert', 'ert@ert.com', '123'),
-(172, 'ghj', 'ghj', '123'),
-(173, 'vbn', 'vbn', '123'),
-(174, 'hjk', 'hjk', '123'),
-(177, 'gabriel', 'email', '123');
+(1, 'Kauan', 'Kauan@gmail.com', '123'),
+(2, 'João', 'Joâo@gmail.com', '345');
 
 -- --------------------------------------------------------
 
@@ -128,13 +109,13 @@ ALTER TABLE `workshops`
 -- AUTO_INCREMENT de tabela `inscricoes`
 --
 ALTER TABLE `inscricoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `workshops`

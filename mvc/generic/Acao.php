@@ -22,6 +22,7 @@ class Acao{
 
         if ($end) {
             if($end->autenticar){
+                http_response_code(200);
                 $jwt = new JWTAuth();
                 $decode = $jwt->verificar();
                 if(!$decode) {

@@ -2,30 +2,33 @@
 namespace controller;
 
 use service\WorkshopsService;
-use template\WorkshopsTemp;
-use template\Itemplate;
 
 class Workshops{
-    private Itemplate $template;
     public function __construct(){
-        $this-> template = new WorkshopsTemp();
+        
     }
 
     public function listarWorkshop(){
-    $workshop_id = $_GET['workshop_id'] ?? null;
-    if (!$workshop_id) {
-        echo "Workshop não informado!";
-        return;
+        $service = new WorkshopsService();
+        $resultado = $service->listarWorkshop();
+        return $resultado;
     }
-    $service = new WorkshopsService();
-    $workshop = $service->listarWorkshop($workshop_id); // Dados do workshop
-    $usuarios = $service->listarUsuarios($workshop_id); // Inscritos
 
-    // Monta um array com os dados do workshop e dos inscritos
-    $dados = [
-        'workshop' => $workshop[0] ?? [],
-        'usuarios' => $usuarios
-    ];
-    $this->template->layout("workshopsListar.php", $dados);
-}
+    public function adicionar($titulo, $descricao, $data){
+        $service = new WorkshopsService();
+        $resultado = $service->adicionar($titulo, $descricao, $data);
+        return $resultado;
+    }
+
+    public function alterar($id, $titulo, $descricao, $data){
+        $service = new WorkshopsService();
+        $resultado = $service->alterar($id, $titulo, $descricao, $data);
+        return $resultado;
+    }
+
+    public function excluir($id){
+        $service = new WorkshopsService();
+        $resultado = $service->excluir($id);
+        return $resultado;
+    }
 }

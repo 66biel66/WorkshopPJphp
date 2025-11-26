@@ -11,9 +11,9 @@ class Controller{
     public function verificarChamadas($rota){
         $retorno = $this->rotas->executar($rota);
         if ($retorno){
-            header("Content-Type: application/json");
-            $json = json_encode($retorno);
-            echo $json;
+        header("Content-Type: application/json");
+        $json = json_encode($retorno);
+        echo $json;
         }
     }
 }

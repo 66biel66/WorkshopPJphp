@@ -1,5 +1,4 @@
 <?php
-
 namespace service;
 
 use dao\mysql\UsuarioDAO;
@@ -39,39 +38,4 @@ class UsuarioService extends UsuarioDAO
             return $jwt->criarChave(json_encode($objeto));
         }
     }
-
-    /*public function listarId($id)
-    {
-        return parent::listarId($id);
-    }
-
-    public function fazerLogin($email, $senha)
-    {
-        return parent::fazerLogin($email, $senha);
-    }
-
-    
-
-    public function getID($email)
-    {
-        return parent::getID($email);
-    }
-
-    public function login()
-    {
-        return parent::login();
-    }
-    /*public function autenticar($email, $senha)
-    {
-        $rows = parent::verificaLogin($email, $senha);
-        if ($rows) {
-            $jwt = new JWTAuth();
-            $objeto = new stdClass();
-            $objeto->email=$rows[0]["email"];
-            $objeto->senha=$rows[0]["senha"];
-
-            return $jwt->criarChave(json_encode($objeto));
-        }
-        http_response_code(401);
-    }*/
 }
